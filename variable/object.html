@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>object basic</p>
+    <script>
+
+        let obj={
+            a:"abc",
+            b:"def",
+            c:"fff",
+            "a b":"fasd"
+        }
+        console.log(obj)
+        //object contain much more method 
+        obj.e="how"
+        let d="c"//c is key of obj so it is pass in like obj["c"] so it's gives fff
+        console.log(obj[d])
+        console.log(obj)
+
+        console.log(obj.a)
+
+        //access a b key
+        console.log(obj["a b"])//this is valid dot operator is not perform here
+
+        var emp={id:102,name:"vraj",salary:"4000"}
+        document.write(emp.id+" "+emp.name+" "+emp.salary)
+
+        var emp1=new Object()
+        console.log(emp1)
+        emp1.name="vraj"
+        emp1.surname="patel"
+        emp1.that="vr12"
+        console.log(emp1)   
+
+        //create constructor
+        var arr=function(id,name,surname){
+            this.id=id,
+            this.name=name,
+            this.surname=surname
+            this.sal=sal
+        }
+        function sal(salary){
+            this.salary=salary
+        }
+
+        var arr1=new arr(12,"jaskit","paji")
+        arr1.sal(23)
+        console.log(arr1)
+        console.log(arr1.salary)//it is in method of object in constructor
+
+
+        //if i can use this upper object with one minnor change
+
+        //factory function
+        function createObject(t,n){//camelCase
+            return{
+                title:t,
+                name:n,
+                enroll(){
+                    console.log("enrollment function")
+                }
+            }
+        }
+
+        let o1=createObject("books","love and war")
+        o1.enroll()
+
+        //constructor function
+        function CreateConstructor(title,name){//pascal case
+            this.title=title,
+            this.name=name,
+            this.enroll=function(){
+                console.log("enroll function constructor")
+            }
+        }
+        let obj1=new CreateConstructor("boo","world")
+        console.log(obj1)
+        obj1.enroll()
+        //delete key
+        delete obj1.title
+        console.log(obj1);
+
+        //add function
+        obj1.addEnroll="this is add enroll function"
+        console.log(obj1);
+
+        //convert object of function
+        const objf=new Function('title',`
+            this.title=title,
+            
+            this.enroll=function(){
+                console.log("enroll function constructor")
+            }
+            `)
+
+        let obj3=new objf("b","f")
+        console.log(obj3.enroll())
+
+
+        //object use pass by reference
+        //clone the object
+
+        var hod={...emp}
+        var hod1=Object.assign({},emp)//another method
+        console.log(hod)
+
+        //another method is for loop
+        var hod2={}
+        for (let key of Object.keys(emp)){
+            hod2[key]=emp[key]
+        }
+        console.log(hod2)
+
+        // `` is templete litreal
+
+
+
+
+
+    </script>
+</body>
+</html>

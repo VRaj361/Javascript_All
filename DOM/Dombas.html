@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-top: 2px solid orange">
+        <a class="navbar-brand" href="#">
+          <img src="IMAGES/stackoverflow_icon.png" width="30" height="30" alt="" />
+        </a>
+        <a class="navbar-brand hover-button-nav" href="StackoverflowHome.jsp">stack<strong>overflow</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link hover-button-nav" href="#">About</a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link hover-button-nav" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hover-button-nav" href="#">For team</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 w-75" action="LogoutMainServlet">
+            <input class="form-control mr-sm-2 w-75" type="search" placeholder="Search" aria-label="Search" />
+            <!-- <button class="btn my-2 my-sm-0" style="background-color: #b3d3ea; color: rgb(70, 119, 165);" type="submit">Login</button> -->
+            <button class="btn btn-success ">V</button>
+            <button class="btn btn-primary my-2 my-sm-0 ml-1" type="submit">
+              logout
+            </button>
+          </form>
+        </div>
+      </nav>
+
+
+</body>
+</html>
+<!-- <body onkeydown="f(event)" onkeyup=" function11(event)">
+    <h1 onmouseenter="functi(this)"></h1>
+    <h1 onmouseenter="func(this)">object</h1>
+    <h1 onmouseout="fun(this)">object</h1>
+    <button onclick="bnt(this)">this is </button>
+    <button onclick="change(this)">red</button>
+    <button onclick="change1(this)">green</button>
+    <p id="text"></p>
+    <input type="text" onfocus="this.style.backgroundColor='yellow'">
+    <script>
+
+        function function11(e){
+            document.body.style.backgroundColor="red"
+        }
+
+        function f(e){
+            console.log(e.keyCode)
+            document.addEventListener("onkeypress",function(e){console.log(e.which)})
+        }
+        function functi(obj){
+            obj.innerHTML="this is heading event"
+            
+        }
+        function func(obj){
+            obj.innerHTML="this is chanages"
+        }
+        function fun(obj){
+            obj.innerHTML="this is changes"
+        }
+        function bnt(obj){
+            var a=new Date()
+            document.getElementById("text").innerHTML=a;
+        }
+        function change(obj){
+            document.body.style.backgroundColor="red"
+        }
+        function change1(obj){
+            document.body.style.backgroundColor="green"
+        }
+
+        //mouse event add nesecessry element 
+        //if mouse is hover handing color change
+        //mouse goes out it should turn black
+        //if find time button is clicked then show time and data info
+        //if button name red is clicked , background color should change red and if green is clicked , background should change green 
+
+
+        //giev key code key press
+        //script should you message that "vowel is pressed if vowel case is pressed"
+        //background color should change to red after realesed preseed key
+        //
+    </script>
+</body>
+</html> -->

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    ajax  basic
+    <button class="btn btn-primary" id="fetchbtn">Fetch data</button>
+    <div class=" mt-5" id="container">
+    </div>   
+    <script>
+        let fetchData=document.getElementById("fetchbtn")
+        fetchData.addEventListener("click",getData)
+        // function getData(){
+        //     console.log("button clicked")
+        //     const xhr=new XMLHttpRequest();
+        //     xhr.open("GET","test.txt",true);
+        //     xhr.onprogress=function(){
+        //       console.log("function is onload")
+        //     }
+        //     xhr.onload=function(){
+        //       if(this.status===200){
+        //         console.log("data fetch")
+        //         console.log(this.responseText)
+        //       }else{
+        //         console.log("Something wents wrong")
+        //       }
+        //     }
+        //     xhr.send()
+            
+
+        // }
+
+        // function getData(){//post request
+        //   console.log("inside the function")
+        //   const xhr=new XMLHttpRequest();
+        //   xhr.open("POST","http://dummy.restapiexample.com/api/v1/create",true);
+        //   xhr.getResponseHeader("Content-type","application/JSON")
+        //   xhr.onload=function(){
+        //     if(this.status===200){
+        //       const obj=this.responseText
+        //       console.log(obj)
+        //     }else{
+        //       console.log("something wents wrong")
+        //     }
+        //   }
+        //   params=`{"message":"Error Occured! Page Not found, contact rstexample@gmail.com"}`
+        //   xhr.send(params)
+        // }
+
+          function getData(){//all users get information
+            console.log("inside the getdata function")
+             
+            const xhr=new XMLHttpRequest()
+            xhr.open("GET","http://dummy.restapiexample.com/api/v1/employees",true);
+            xhr.onload=function(){
+              if(this.status===200){
+                const objs=JSON.parse(this.responseText)
+                var divele=document.getElementById("container")
+                var str=""
+                for(key in objs.data){
+                  
+                  str+=`<p>${objs.data[key].employee_name}</p>`
+                }
+                console.log(str)
+                divele.innerHTML=str
+                
+              }else{
+                console.log("problem")
+              }
+            }
+            xhr.send()
+          }
+
+
+
+    </script>
+    
+</body>
+</html>

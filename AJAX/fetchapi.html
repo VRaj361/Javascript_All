@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="fetch">fetch api</button>
+    <script>
+        const fet=document.getElementById("fetch")
+
+        console.log("starting")
+        function getdata(){
+            url="https://api.github.com/users";
+            fetch(url).then(response=>response.json()).then(data=>{
+                console.log(data)
+            })
+        }
+
+        function postData(){
+            url="https://reqres.in/api/users/create"
+            data='{"name": "morpheusdfas","job": "leaderfasdf"}'
+            params={
+                method:"post",
+                headers:{
+                    
+                    'Content-type':'application/JSON'
+                },
+                body:data
+            }
+            
+
+
+            fetch(url,params).then(response=>response.json()).then(data=>console.log(data))
+        }
+
+
+        console.log("before the function")//first run
+        getdata()//async call fetch function
+        console.log("after the function")//second run
+        postData()
+        //after function run
+    </script>
+</body>
+</html>

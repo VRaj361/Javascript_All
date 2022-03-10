@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function func(){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(()=>{
+        //             const error=false
+        //             if(!error){
+        //                 console.log("resolve")
+        //                 resolve("SUCCESSFULLY RUN")
+        //             }else{
+        //                 console.log("ERROR OCCUR")
+        //                 reject()
+        //             }
+ 
+        //         },2000)
+        //     })
+        // }
+        // func().then(function(arg){
+        //     console.log(arg)
+        // }).catch(function(arg){
+        //     console.log(arg)
+        // })
+
+
+        //use callback and promise combine
+        let arr=[{name:"vraj",surname:"patel"},{name:"raj",surname:"hemat"}]
+        let stu={name:"kamlesh",surname:"gandhi"}
+        function enroll(stu){
+            return new Promise(function(resole,rejet){
+                setTimeout(()=>{
+                    arr.push(stu)
+                    console.log("student enrolled")
+                    const error=false
+                    if(!error){
+                        resole()
+                    }else{
+                        rejet()
+                    }
+                },2000)
+            })
+        }
+        function getStu(){
+            setTimeout(()=>{
+                console.log("get student all")
+                console.log(arr)
+            },1000)
+        }
+        enroll(stu).then(getStu).catch(function(){
+            console.log("get student method")
+            console.log("problem occur")
+        })
+
+    </script>
+</body>
+</html>

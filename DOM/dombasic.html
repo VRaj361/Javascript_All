@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="co" class="hi">
+            <p class="ptag">fsd </p>
+        </div>
+    </div>
+    <script>
+        console.log(document)//gives all the data
+        console.log(document.links)//gives all the links related to web page
+        console.log(document.all)//all tags array
+        
+        let elemnt=document.getElementById("co")
+        console.log(elemnt.parentNode)
+        console.log(elemnt.parentElement)
+        console.log(elemnt.childNodes)
+        console.log(elemnt.childElementCount)
+        console.log(elemnt.className)
+        console.log(elemnt.classList)
+        elemnt.style.backgroundColor="red"
+        elemnt.innerHTML="<b>hi world</b>"
+        elemnt.innerText="hello"
+
+        //queryselector can fetch first class or tag or id
+        //getelementbyclassname is select multiple elements
+        //getelementbytagname is select multiple element which is call multielement selector
+
+        console.log(elemnt.childNodes)//shows all content including text comment and so on
+        console.log(elemnt.children)//only consider the tags 
+
+
+        //another think which is node 
+        console.log(elemnt.childNodes[1].nodeName)
+        console.log(elemnt.childNodes[1].nodeType)
+        //1)element 2)attribute 3)textnode 8)comment 9)document 10)doctype
+        
+
+
+
+
+    </script>
+</body>
+</html>

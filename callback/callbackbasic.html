@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //settimeout function will call asynchonizally so all function can run with eachother
+
+        let arr=[{name:"vraj",surname:"patel"},{name:"raj",surname:"hemat"}]
+        let stu={name:"kamlesh",surname:"gandhi"}
+        function enroll(stu,callback){
+            setTimeout(()=>{
+                arr.push(stu)
+                console.log("Enroll function call")
+                callback()
+            },4000)    
+        }
+        function getStu(){
+            setTimeout(()=>{
+                console.log(arr)
+            },100)
+        }
+        enroll(stu,getStu)
+
+
+
+    </script>
+</body>
+</html>

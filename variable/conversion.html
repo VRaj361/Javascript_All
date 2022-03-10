@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    coercion 
+    <script>
+        let str="stinrg"
+        console.log(str,typeof str)
+
+        let num=String(34)
+        console.log(num,typeof num)
+
+        let date=String(new Date())
+        console.log(date,typeof date)
+
+        let arr=String([1,2,3,4,5])//including all the character like 1 and comma and brackets
+        console.log(arr,typeof arr)
+        console.log(arr.length)
+
+        //another method
+        num=34
+        console.log(num.toString(),typeof num.toString())
+        
+        //number
+        str=Number("2323")
+        console.log(str,typeof str)
+
+        let str1=Number("32d")
+        console.log(str1,typeof str1)
+
+        let bool=Number(true)
+        console.log(bool,typeof bool)
+
+        //parseInt is same as number the main difference is if you pass float value then it gives number
+        num=parseInt("3434.43")
+        console.log(num,typeof num)//output in integer form
+
+        
+    </script>
+</body>
+</html>
